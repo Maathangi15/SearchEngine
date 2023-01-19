@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
+<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="s006" style="display: flex;">
+      <form action="http://127.0.0.1:5000/search_all" method="post"  class="d-flex flex-column justify-content-center align-items-center">
+        <legend class="topic">Search</legend>
+        <fieldset>
+          <div class="inner-form">
+            <div class="input-field">
+              <button class="btn-search" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+              </button>
+              <input id="search" type="text" placeholder="Type.."  class="searchTerm" name="searchTerm"/>
+            </div>
+		    </fieldset>
+      </form>
+
+      <form action="http://127.0.0.1:5000/search_target" method="post" class="d-flex flex-column justify-content-center align-items-center">
+        <fieldset>
+          <legend class="topic">Type target domain!!</legend>
+          <div class="inner-form">
+            <div class="input-field">
+              <button class="btn-search" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+              </button>
+              <input id="target" type="text" placeholder="Target..."  class="target" name="target"/>
+          </div>
+		    </fieldset>
+      </form>
+
+      <form action="http://127.0.0.1:5000/search_term" method="post" class="d-flex flex-column justify-content-center align-items-center">
+        <fieldset>
+          <legend class="topic">Search with year!!</legend>
+          <div class="inner-form">
+            <div class="input-field">
+              <button class="btn-search" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+              </button>
+              <input id="term" type="text" placeholder="Year..."  class="term" name="term"/>
+          </div>
+		    </fieldset>
+      </form>
+
+      <form action="http://127.0.0.1:5000/search_year_range" method="post" class="d-flex flex-column justify-content-center align-items-center">
+        <fieldset>
+          <legend class="topic">Search between a period!!</legend>
+          <div class="inner-form">
+            <div class="input-field">
+              <button class="btn-search" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+              </button>
+              <input id="year_range" type="text" placeholder="Year period..."  class="year_range" name="year_range"/>
+          </div>
+		    </fieldset>
+      </form>
+
+      <form action="http://127.0.0.1:5000/search_movie_wildcard" method="post" class="d-flex flex-column justify-content-center align-items-center">
+        <fieldset>
+          <legend class="topic">Search a movie!!</legend>
+          <div class="inner-form">
+            <div class="input-field">
+              <button class="btn-search" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="10" viewBox="0 0 24 24">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                </svg>
+              </button>
+              <input id="movie_wildcard" type="text" placeholder="Movie starts with..."  class="movie_wildcard" name="movie_wildcard"/>
+          </div>
+		    </fieldset>
+      </form>
+      
+    </div>
+  </body>
+</html>

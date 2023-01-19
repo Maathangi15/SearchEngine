@@ -1,0 +1,68 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="s006">
+
+	{% if hits %}
+	<hgroup class="mb20" style="padding: 10px; color: azure; background-color: #9a120a;">
+		<h2>	Search Results</h2>
+	</hgroup>
+	<div style="padding: 10px;"><h4> <b>	We founded <u>{{ num_results }}</u> results for query <u>{{ query }}</u> in <u>{{ time }}ms</u></b></h4></div>
+	<section id='song_section' class="col-md-12">
+		{% for hit in hits %}
+		<div class="card" style="padding: 15px;  margin: 10px; margin-bottom: 40px; border-radius: 10px; border: 5px solid #e6865d;">
+			<div class="card-body">
+				<li> <span><b>திரைப்படம்:</b> {{ hit._source.திரைப்படம்  }} </span></li>
+				<li> <span><b>பாடகர்கள்: </b>{{ hit._source.பாடகர்கள்  }} </span></li>
+				<li> <span><b>வருடம்: </b>{{ hit._source.வருடம்}}</span></li>
+				<li> <span><b>இசையமைப்பாளர்: </b>{{ hit._source.இசையமைப்பாளர்  }} </span></li>
+				<li> <span><b>பாடலாசிரியர்: </b>{{ hit._source.பாடலாசிரியர்}}</span></li>
+
+				
+				{% if 'உருவகம்_1' in hit._source %}
+				<li> <span><b>உருவகம் - 1:</b> {{ hit._source['உருவகம்_1'] }} </span></li>
+				<ul>
+					<li> <span><b>மூலம்:</b> {{ hit._source['மூலம்_1'] }} </span></li>
+					<li> <span><b>இலக்கு:</b> {{ hit._source['இலக்கு_1'] }} </span></li>
+					<li> <span><b>விளக்கம்:</b> {{ hit._source['விளக்கம்_1'] }} </span></li>
+				</ul>
+				{% endif %}
+
+				{% if 'உருவகம்_2' in hit._source %}
+				<li> <span><b>உருவகம் - 2:</b> {{ hit._source['உருவகம்_2'] }} </span></li>
+				<ul>
+					<li> <span><b>மூலம்:</b> {{ hit._source['மூலம்_2'] }} </span></li>
+					<li> <span><b>இலக்கு:</b> {{ hit._source['இலக்கு_2'] }} </span></li>
+					<li> <span><b>விளக்கம்:</b> {{ hit._source['விளக்கம்_2'] }} </span></li>	
+				</ul>
+				{% endif %}
+
+				{% if 'உருவகம்_3' in hit._source %}
+				<li> <span><b>உருவகம் - 3:</b> {{ hit._source['உருவகம்_3'] }} </span></li>
+				<ul>
+					<li> <span><b>மூலம்:</b> {{ hit._source['மூலம்_3'] }} </span></li>
+					<li> <span><b>இலக்கு:</b> {{ hit._source['இலக்கு_3'] }} </span></li>
+					<li> <span><b>விளக்கம்:</b> {{ hit._source['விளக்கம்_3'] }} </span></li>
+				</ul>
+				{% endif %}
+
+				{% if 'உருவகம்_4' in hit._source %}
+				<li> <span><b>உருவகம் - 4:</b> {{ hit._source['உருவகம்_4'] }} </span></li>
+				<ul>
+					<li> <span><b>மூலம்:</b> {{ hit._source['மூலம்_4'] }} </span></li>
+					<li> <span><b>இலக்கு:</b> {{ hit._source['இலக்கு_4'] }} </span></li>
+					<li> <span><b>விளக்கம்:</b> {{ hit._source['விளக்கம்_4'] }} </span></li>
+				</ul>
+				{% endif %}
+
+				<li> <span><b>பாடல் வரிகள்:</b> {{ hit._source['பாடல் வரிகள்'] }} </span></li>
+
+			</div>
+		  </div>
+		{% endfor %}
+	</section>
+	{% else %}
+		<h2 class="text-danger">No results found for the entered data</h2>
+	{% endif %}
+</div>

@@ -1,0 +1,3 @@
+curl -X PUT "localhost:9200/lyrics_metaphor_db?pretty" -H "Content-Type: application/json" -d @mapping.json
+
+curl -X POST "localhost:9200/lyrics_metaphor_db/_bulk?pretty" -H "Content-Type: application/json" --data-binary @180071Pcorpus.json
